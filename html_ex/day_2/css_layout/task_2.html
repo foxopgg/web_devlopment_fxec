@@ -1,0 +1,18 @@
+<div class="gallery">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+</div>
+<style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+</style>

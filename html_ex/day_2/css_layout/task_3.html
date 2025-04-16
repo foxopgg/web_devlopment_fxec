@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+</div>
+<style>
+    .container {
+        display: flex;
+    }
+
+    .sidebar {
+        width: 30%;
+        background: #ddd;
+        padding: 10px;
+    }
+
+    .main {
+        width: 70%;
+        padding: 10px;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .sidebar, .main {
+            width: 100%;
+        }
+    }
+</style>

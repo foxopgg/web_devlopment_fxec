@@ -4,16 +4,19 @@ body {
   padding: 0;
   background: #121212;
   color: #fff;
+  background-image: url("images/standard.gif"); 
 }
 header {
   background: #e10600;
   padding: 20px;
   text-align: center;
+  background-image: url("images/standard.gif");
 }
 .countdown {
   padding: 20px;
   background: #222;
   text-align: center;
+  background-image: url("images/standard.gif");
 }
 #timer {
   font-size: 2em;
@@ -52,6 +55,7 @@ header {
   list-style: none;
   padding: 0;
   line-height: 2;
+  text-align: center;
 }
 
 

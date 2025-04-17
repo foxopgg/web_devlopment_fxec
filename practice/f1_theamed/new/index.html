@@ -7,13 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <section class="hero">
-    <img src="images/hero.jpg" alt="2025 F1 Car" />
-    <div class="hero-text">
-      <h1>Formula 1 2025 Season</h1>
-      <p>Experience the thrill of speed and precision.</p>
-    </div>
-  </section>
+  <header>
+    <h1>Formula 1 - 2025 Season</h1>
+  </header>
 
   <section class="countdown">
     <h2>Next Race: Saudi Arabian Grand Prix</h2>
@@ -21,29 +17,55 @@
   </section>
 
   <section class="drivers">
-    <h2>Top 10 Drivers</h2>
+    <h2>2025 F1 Driver Line-Up</h2>
     <div class="driver-cards">
-      <div class="driver-card">
-        <img src="images/drivers/lando_norris.jpg" alt="Lando Norris" />
-        <div class="driver-info">
-          <h3>Lando Norris</h3>
-          <p>Team: McLaren</p>
-          <p>Points: 77</p>
-        </div>
-      </div>
+      <div class="driver-card"><img src="images/drivers/verstappen.jpg"/><div class="info"><h3>Max Verstappen</h3><p>Red Bull Racing</p></div></div>
+      <div class="driver-card"><img src="images/drivers/tsunoda.jpg"/><div class="info"><h3>Yuki Tsunoda</h3><p>Red Bull Racing</p></div></div>
+      <div class="driver-card"><img src="images/drivers/leclerc.jpg"/><div class="info"><h3>Charles Leclerc</h3><p>Ferrari</p></div></div>
+      <div class="driver-card"><img src="images/drivers/hamilton.jpg"/><div class="info"><h3>Lewis Hamilton</h3><p>Ferrari</p></div></div>
+      <div class="driver-card"><img src="images/drivers/russell.jpg"/><div class="info"><h3>George Russell</h3><p>Mercedes</p></div></div>
+      <div class="driver-card"><img src="images/drivers/antonelli.jpg"/><div class="info"><h3>A. Kimi Antonelli</h3><p>Mercedes</p></div></div>
+      <div class="driver-card"><img src="images/drivers/norris.jpg"/><div class="info"><h3>Lando Norris</h3><p>McLaren</p></div></div>
+      <div class="driver-card"><img src="images/drivers/piastri.jpg"/><div class="info"><h3>Oscar Piastri</h3><p>McLaren</p></div></div>
+      <div class="driver-card"><img src="images/drivers/alonso.jpg"/><div class="info"><h3>Fernando Alonso</h3><p>Aston Martin</p></div></div>
+      <div class="driver-card"><img src="images/drivers/stroll.jpg"/><div class="info"><h3>Lance Stroll</h3><p>Aston Martin</p></div></div>
     </div>
   </section>
 
-  <section class="teams">
-    <h2>Teams</h2>
-    <div class="team-cards">
-      <div class="team-card">
-        <img src="images/teams/mclaren.jpg" alt="McLaren" />
-        <h3>McLaren</h3>
-      </div>
-    </div>
+  <section class="calendar">
+    <h2>2025 Race Calendar</h2>
+    <ul>
+      <li>Mar 14–16: Australian GP</li>
+      <li>Mar 21–23: Chinese GP</li>
+      <li>Apr 4–6: Japanese GP</li>
+      <li>Apr 11–13: Bahrain GP</li>
+      <li>Apr 18–20: Saudi Arabian GP</li>
+      <li>May 2–4: Miami GP</li>
+      <li>May 16–18: Imola GP</li>
+      <li>May 23–25: Monaco GP</li>
+      <li>May 30–Jun 1: Spanish GP</li>
+      <li>Jun 13–15: Canadian GP</li>
+      <li>Jun 27–29: Austrian GP</li>
+      <li>Jul 4–6: British GP</li>
+      <li>Jul 25–27: Belgian GP</li>
+      <li>Aug 1–3: Hungarian GP</li>
+      <li>Aug 29–31: Dutch GP</li>
+      <li>Sep 5–7: Italian GP</li>
+      <li>Sep 19–21: Azerbaijan GP</li>
+      <li>Oct 3–5: Singapore GP</li>
+      <li>Oct 17–19: USA GP</li>
+      <li>Oct 24–26: Mexico GP</li>
+      <li>Nov 7–9: Brazil GP</li>
+      <li>Nov 20–22: Las Vegas GP</li>
+      <li>Nov 28–30: Qatar GP</li>
+      <li>Dec 5–7: Abu Dhabi GP</li>
+    </ul>
   </section>
-
+  <section class="speed-section">
+    <h2>Live Speed Tracker - Carlos Sainz (Car #55)</h2>
+    <div id="speedDisplay">Loading speed data...</div>
+  </section>
+  
   <script src="script.js"></script>
 </body>
 </html>

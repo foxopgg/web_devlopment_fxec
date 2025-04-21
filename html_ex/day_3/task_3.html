@@ -1,0 +1,48 @@
+<!-- flexbox-layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    header {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+    }
+    .sidebar {
+      background: #eee;
+      padding: 20px;
+      flex: 1 1 200px;
+    }
+    .main {
+      background: #ddd;
+      padding: 20px;
+      flex: 2 1 400px;
+    }
+    @media (max-width: 700px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Header</header>
+  <div class="container">
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+  </div>
+</body>
+</html>

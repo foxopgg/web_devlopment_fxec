@@ -1,0 +1,26 @@
+<!-- keyframe-animation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyframe Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      animation: slide 3s infinite;
+    }
+    @keyframes slide {
+      0% { left: 0; }
+      50% { left: 300px; background: orange; }
+      100% { left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

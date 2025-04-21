@@ -1,0 +1,36 @@
+<!-- grid-layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Two Column Layout</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    header, footer {
+      grid-column: span 2;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .content1, .content2 {
+      background: #ddd;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Header</header>
+    <div class="content1">Left Column</div>
+    <div class="content2">Right Column</div>
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>

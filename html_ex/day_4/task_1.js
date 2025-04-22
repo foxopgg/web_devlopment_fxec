@@ -1,4 +1,4 @@
-let name = "Punda";          // string
+let name = "Balaji";          // string
 let age = 21;                // number
 let isStudent = true;        // boolean
 let address;                 // undefined

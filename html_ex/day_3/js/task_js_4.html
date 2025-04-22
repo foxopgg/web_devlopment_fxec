@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Two Numbers</title>
+    <script>
+        function sumNumbers(num1, num2) {
+            return num1 + num2;
+        }
+
+        function displayResult() {
+            const result = sumNumbers(5, 7); // Example numbers
+            document.getElementById('result').textContent = `The sum is: ${result}`;
+        }
+    </script>
+</head>
+<body onload="displayResult()">
+    <h1>Sum of Two Numbers</h1>
+    <p id="result"></p>
+</body>
+</html>

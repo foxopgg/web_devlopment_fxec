@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <div id="timer">10</div>
+    <button id="startButton">Start Countdown</button>
+
+    <script>
+        const timerElement = document.getElementById('timer');
+        const startButton = document.getElementById('startButton');
+        let countdown;
+
+        startButton.addEventListener('click', () => {
+            let timeLeft = 10;
+
+            // Clear any existing countdown to prevent multiple timers
+            clearInterval(countdown);
+
+            timerElement.textContent = timeLeft;
+
+            countdown = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .strength-indicator {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .weak {
+            color: red;
+        }
+        .medium {
+            color: orange;
+        }
+        .strong {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Strength Checker</h1>
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" oninput="checkStrength()">
+    <div id="strength" class="strength-indicator"></div>
+
+    <script>
+        function checkStrength() {
+            const password = document.getElementById('password').value;
+            const strengthIndicator = document.getElementById('strength');
+            let strength = '';
+            let strengthClass = '';
+
+            if (password.length < 6) {
+                strength = 'Weak';
+                strengthClass = 'weak';
+            } else if (password.length >= 6 && /[A-Z]/.test(password) && /[0-9]/.test(password) && /[\W_]/.test(password)) {
+                strength = 'Strong';
+                strengthClass = 'strong';
+            } else {
+                strength = 'Medium';
+                strengthClass = 'medium';
+            }
+
+            strengthIndicator.textContent = strength;
+            strengthIndicator.className = `strength-indicator ${strengthClass}`;
+        }
+    </script>
+</body>
+</html>

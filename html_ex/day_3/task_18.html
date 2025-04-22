@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none; /* Hidden by default for small screens */
+            flex-direction: column;
+        }
+
+        .menu li {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .menu {
+                display: flex; /* Inline display for larger screens */
+                flex-direction: row;
+            }
+
+            .menu li {
+                border: none;
+                padding: 0 15px;
+            }
+
+            .menu-toggle {
+                display: none; /* Hide toggle button on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="menu-toggle">☰ Menu</span>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

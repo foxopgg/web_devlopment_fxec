@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .content div {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Two-Column Page Layout</h1>
+    </header>
+    <div class="content">
+        <div>
+            <h2>Column 1</h2>
+            <p>This is the first column.</p>
+        </div>
+        <div>
+            <h2>Column 2</h2>
+            <p>This is the second column.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Website</p>
+    </footer>
+</body>
+</html>

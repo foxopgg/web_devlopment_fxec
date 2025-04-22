@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .gallery {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* Default: 1 column for small screens */
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        /* Medium screens: 2 columns */
+        @media (min-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Large screens: 4 columns */
+        @media (min-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Responsive Image Gallery</h1>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 1">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 2">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 3">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 4">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 5">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 6">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 7">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image 8">
+    </div>
+</body>
+</html>

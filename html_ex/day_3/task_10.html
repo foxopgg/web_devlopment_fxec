@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+        }
+
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            flex: 1 1 200px;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            background-color: #fff;
+            padding: 1rem;
+            flex: 3 1 400px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                order: 2;
+            }
+
+            .main-content {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flexbox Layout</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content.</p>
+        </div>
+        <div class="main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content area.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Elements</title>
+    <style>
+        .dynamic-paragraph {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleParagraphButton">Add Paragraph</button>
+    <div id="content"></div>
+
+    <script>
+        const button = document.getElementById('toggleParagraphButton');
+        const contentDiv = document.getElementById('content');
+        let paragraphAdded = false;
+
+        button.addEventListener('click', () => {
+            if (!paragraphAdded) {
+                const paragraph = document.createElement('p');
+                paragraph.textContent = "This is a dynamically added paragraph.";
+                paragraph.className = "dynamic-paragraph";
+                paragraph.id = "dynamicParagraph";
+                contentDiv.appendChild(paragraph);
+                button.textContent = "Remove Paragraph";
+                paragraphAdded = true;
+            } else {
+                const paragraph = document.getElementById('dynamicParagraph');
+                if (paragraph) {
+                    contentDiv.removeChild(paragraph);
+                }
+                button.textContent = "Add Paragraph";
+                paragraphAdded = false;
+            }
+        });
+    </script>
+</body>
+</html></html>

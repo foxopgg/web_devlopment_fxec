@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="addParagraphBtn">Add Paragraph</button>
+    <div id="content"></div>
+
+    <script>
+        const addParagraphBtn = document.getElementById('addParagraphBtn');
+        const contentDiv = document.getElementById('content');
+
+        addParagraphBtn.addEventListener('click', () => {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'This is a dynamically added paragraph. Click to remove.';
+            paragraph.addEventListener('click', () => {
+                contentDiv.removeChild(paragraph);
+            });
+            contentDiv.appendChild(paragraph);
+        });
+    </script>
+</body>
+</html>

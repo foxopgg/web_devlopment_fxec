@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade-In Effect</title>
+    <style>
+        /* Keyframes for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Apply fade-in animation to the element */
+        .fade-in {
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeIn 2s ease-in forwards; /* 2 seconds fade-in */
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-in">
+        <h1>Welcome to the Fade-In Effect!</h1>
+        <p>This text will fade in when the page loads.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phone Number Validation</h1>
+    <form id="phoneForm">
+        <label for="phone">Enter your phone number (format: (XXX) XXX-XXXX):</label><br>
+        <input type="text" id="phone" name="phone" required>
+        <span id="error" class="error"></span><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('phoneForm').addEventListener('submit', function(event) {
+            const phoneInput = document.getElementById('phone').value;
+            const errorSpan = document.getElementById('error');
+            const phonePattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+
+            if (!phonePattern.test(phoneInput)) {
+                event.preventDefault();
+                errorSpan.textContent = "Invalid phone number format. Please use (XXX) XXX-XXXX.";
+            } else {
+                errorSpan.textContent = "";
+                alert("Phone number is valid!");
+            }
+        });
+    </script>
+</body>
+</html>

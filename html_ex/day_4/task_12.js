@@ -8,4 +8,4 @@ function countVowels(str) {
     }
     return count;
 }
-console.log("Vowels in 'Loose Punda':", countVowels("Loose Punda"));
+console.log("Vowels in 'Ajmal':", countVowels("Ajmal"));

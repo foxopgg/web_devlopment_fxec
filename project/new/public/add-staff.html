@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Staff</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>College Database Management - Add Staff</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="view-students.html">View Students</a>
+      <a href="add-student.html">Add Student</a>
+      <a href="view-staff.html">View Staff</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="add-staff" class="card">
+      <h2>Add Staff</h2>
+      <form id="staffForm">
+        <input type="text" name="name" placeholder="Staff Name" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <select name="department_id" required>
+          <option value="">Select Department</option>
+          <option value="1">Computer Science</option>
+          <option value="2">Mathematics</option>
+          <option value="3">Physics</option>
+        </select>
+        <button type="submit">Add Staff</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

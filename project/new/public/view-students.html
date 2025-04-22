@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Students</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>College Database Management - View Students</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="add-student.html">Add Student</a>
+      <a href="add-staff.html">Add Staff</a>
+      <a href="view-staff.html">View Staff</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-students" class="card">
+      <h2>Students List</h2>
+      <table id="studentsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>DOB</th>
+            <th>Subject 1</th>
+            <th>Subject 2</th>
+            <th>Subject 3</th>
+            <th>Subject 4</th>
+            <th>Subject 5</th>
+            <th>Department</th>
+            <th>Staff ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Student data will load here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const tableBody = document.querySelector('#studentsTable tbody');
+    
+      try {
+        const res = await fetch('/api/students');
+        const students = await res.json();
+    
+        students.forEach(student => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td>${student.class}</td>
+            <td>${student.dob}</td>
+            <td>${student.subject1}</td>
+            <td>${student.subject2}</td>
+            <td>${student.subject3}</td>
+            <td>${student.subject4}</td>
+            <td>${student.subject5}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (err) {
+        console.error('Error loading students:', err);
+      }
+    });
+    </script>
+  <footer>   
+    <p>&copy; 2025 College Database Management</p>
+    <p>All rights reserved.</p>
+</body>
+</html>

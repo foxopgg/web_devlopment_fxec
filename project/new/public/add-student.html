@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Student</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>College Database Management - Add Student</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="view-students.html">View Students</a>
+      <a href="add-staff.html">Add Staff</a>
+      <a href="view-staff.html">View Staff</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="add-student" class="card">
+      <h2>Add Student</h2>
+      <form id="studentForm">
+        <input type="text" name="name" placeholder="Student Name" required />
+        <input type="text" name="class" placeholder="Class" required />
+        <input type="date" name="dob" placeholder="Date of Birth" required />
+        <input type="number" name="subject1" placeholder="Subject 1 Marks" required />
+        <input type="number" name="subject2" placeholder="Subject 2 Marks" required />
+        <input type="number" name="subject3" placeholder="Subject 3 Marks" required />
+        <input type="number" name="subject4" placeholder="Subject 4 Marks" required />
+        <input type="number" name="subject5" placeholder="Subject 5 Marks" required />
+        <select name="department_id" required>
+          <option value="">Select Department</option>
+          <option value="1">Computer Science</option>
+          <option value="2">Mathematics</option>
+          <option value="3">Physics</option>
+        </select>
+        <input type="number" name="staff_id" placeholder="Handling Staff ID" required />
+        <button type="submit">Add Student</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

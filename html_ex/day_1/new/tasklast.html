@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page</title>
+</head>
+<body>
+    <!-- Text link to another page -->
+    <p>
+        <a href="https://www.example.com" target="_blank">Visit Example Website</a>
+    </p>
+    <!-- Reason: The <a> tag is used for creating hyperlinks. The 'href' attribute specifies the URL, and 'target="_blank"' opens the link in a new tab. -->
+
+    <!-- Clickable image link -->
+    <p>
+        <a href="https://www.example.com" target="_blank">
+            <img src="https://via.placeholder.com/150" alt="Example Image">
+        </a>
+    </p>
+    <!-- Reason: The <a> tag wraps the <img> tag to make the image clickable. The 'src' attribute specifies the image URL, and 'alt' provides alternative text. -->
+
+    <!-- Submit button -->
+    <p>
+        <form action="/submit" method="post">
+            <input type="submit" value="Submit">
+        </form>
+    </p>
+    <!-- Reason: The <input type="submit"> tag is used inside a <form> to submit form data to the specified action URL. -->
+
+    <!-- Regular button -->
+    <p>
+        <button onclick="alert('Button clicked!')">Click Me</button>
+    </p>
+    <!-- Reason: The <button> tag is used for a general-purpose button. The 'onclick' attribute specifies a JavaScript action to execute when the button is clicked. -->
+</body>
+</html>

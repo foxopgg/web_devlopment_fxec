@@ -1,76 +1,162 @@
-/* General styles for all pages */
+/* General body and background */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f4f8;
-  }
-  
-  header {
-    background-color: #0044cc;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav {
-    margin-top: 1rem;
-  }
-  
-  nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  .card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1.5rem;
-  }
-  
-  table th, table td {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-  }
-  
-  button {
-    padding: 0.7rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  form input, form select {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form button {
-    width: 100%;
-  }
-  
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  animation: bgFade 20s infinite alternate;
+  scroll-behavior: smooth;
+}
+
+/* Background animation */
+@keyframes bgFade {
+  0% { background: linear-gradient(135deg, #e0eafc, #cfdef3); }
+  100% { background: linear-gradient(135deg, #f9f9f9, #a1c4fd); }
+}
+
+/* Header styling */
+header {
+  background: linear-gradient(90deg, #2b5876, #4e4376);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Navigation links */
+nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: white;
+  color: #4e4376;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #4e4376;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Main container */
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Card container */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  color: #2b5876;
+  margin-top: 0;
+}
+
+/* Form inputs */
+form {
+  margin-top: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Submit button inside form */
+form button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #0044cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #003399;
+}
+
+/* General buttons */
+button {
+  padding: 0.7rem 1.2rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th, table td {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #4e4376;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

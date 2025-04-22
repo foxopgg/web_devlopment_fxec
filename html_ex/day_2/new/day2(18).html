@@ -1,0 +1,29 @@
+<html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; }
+
+    .container { display: flex; flex-direction: column; min-height: 100vh; }
+    header, footer { background: #333; color: white; text-align: center; padding: 10px; }
+    nav { background: #444; text-align: center; padding: 10px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .content { flex: 1; padding: 20px; background: #f4f4f4; }
+
+    @media (max-width: 768px) {
+      nav { text-align: left; }
+      nav a { display: block; margin: 5px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header><h1>Responsive</h1></header>
+    <nav><a href="#">Home</a><a href="#">About</a><a href="#">Services</a><a href="#">Contact</a></nav>
+    <div class="content"><h2>Welcome</h2><p>Flexbox layout</p></div>
+    <footer>&copy; 2025</footer>
+  </div>
+
+</body>
+</html>

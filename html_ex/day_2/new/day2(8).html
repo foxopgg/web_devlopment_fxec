@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Demo</title>
+  <style>
+    a:hover { color: red; }
+    li:nth-child(odd) { background: #eee; }
+    li:nth-child(even) { background: #cce; }
+    input:focus { border: 2px solid blue; background: #def; }
+    .rel { position: relative; top: 20px; margin: 10px; }
+    .abs-wrap { position: relative; width: 200px; height: 100px; border: 1px solid #000; }
+    .abs-wrap img { position: absolute; top: 5px; right: 5px; width: 30px; }
+    .fixed-nav { position: fixed; top: 0; width: 100%; background: #333; color: #fff; text-align: center; padding: 5px; }
+    body { margin: 0; padding-top: 40px; }
+  </style>
+</head>
+<body>
+  <div class="fixed-nav">Fixed Nav</div>
+  <a href="#">Hover me</a>
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+  </ul>
+  <input type="text" placeholder="Focus me" />
+  <div class="rel">Relatively positioned box</div>
+  <div class="abs-wrap">
+    Absolute Image
+    <img src="https://via.placeholder.com/30" alt="img" />
+  </div>
+</body>
+</html>

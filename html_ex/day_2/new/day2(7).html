@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Pseudo-Classes Demo</title>
+  <style>
+    /* Hover effect on links */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    /* Style for odd list items */
+    ul li:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    /* Style for even list items */
+    ul li:nth-child(even) {
+      background-color: #d0e0ff;
+    }
+
+    /* Focus effect on input */
+    input:focus {
+      border: 2px solid blue;
+      outline: none;
+      background-color: #e0f7ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Pseudo-Classes Demonstration</h1>
+
+  <h2>:hover on Links</h2>
+  <p>
+    <a href="#">Hover over this link</a> to see the color change.
+  </p>
+
+  <h2>:nth-child on List Items</h2>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+
+  <h2>:focus on Input Field</h2>
+  <input type="text" placeholder="Click here to focus" />
+</body>
+</html>

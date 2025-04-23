@@ -1,0 +1,82 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #fff;
+  background-image: url("images/standard.gif"); 
+}
+header {
+  background: #e10600;
+  padding: 20px;
+  text-align: center;
+  background-image: url("images/standard.gif");
+}
+.countdown {
+  padding: 20px;
+  background: #222;
+  text-align: center;
+  background-image: url("images/standard.gif");
+}
+#timer {
+  font-size: 2em;
+  margin-top: 10px;
+  animation: pulse 2s infinite;
+}
+.drivers, .calendar {
+  padding: 20px;
+}
+.driver-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.driver-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 160px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.driver-card img {
+  width: 100%;
+}
+.driver-card .info {
+  padding: 10px;
+}
+.driver-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+.calendar ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+
+.speed-section {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: 20px auto;
+  border: 2px solid red;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 0 20px red;
+}
+
+#speedDisplay {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,117 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+/* Header */
+header {
+    background-color: #d32f2f;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1603354350317-0d390fba9f3d') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+    color: #ffeb3b;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Teams Section */
+.teams {
+    padding: 40px 20px;
+    background-color: #1c1c1c;
+    text-align: center;
+}
+
+.teams h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff1744;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.ferrari {
+    border-left: 5px solid #e4002b;
+}
+
+.mercedes {
+    border-left: 5px solid #00d2be;
+}
+
+.redbull {
+    border-left: 5px solid #1e41ff;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}

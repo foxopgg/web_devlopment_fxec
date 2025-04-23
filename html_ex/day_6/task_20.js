@@ -15,7 +15,7 @@ function getBooksByGenre(genre) {
 }
 
 const darkRomanceBooks = getBooksByGenre("Adventure");
-console.log(darkRomanceBooks);
+console.log(advanceBooks);
 
 const romanceBooks = getBooksByGenre("Dystopian");
-console.log(romanceBooks);
+console.log(dystopian);

@@ -18,7 +18,7 @@ function findHighestPaidEmployee(employees) {
 const employees = [
     { name: "Balaji", role: "Developer", salary: 75000 },
     { name: "Dilan", role: "MSV Fuels Veeravanallur", salary: 10000000 },
-    { name: "Ajmal", role: "Drug seller", salary: 82000 }
+    { name: "Ajmal", role: "Drug Dealer", salary: 82000 }
 ];
 
 const highestPaid = findHighestPaidEmployee(employees);

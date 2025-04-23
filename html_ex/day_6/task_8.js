@@ -6,12 +6,11 @@ function logBooksWithMoreThanFiveCopies(books) {
     });
 }
 
-
 const libraryBooks = [
-    { title: "Never have i ever", author: "Balaji", availableCopies: 3 },
-    { title: "50 Shades of grey", author: "Dilan", availableCopies: 7 },
-    { title: "Bared to you", author: "Ajmal", availableCopies: 10 },
-    { title: "Fixed on You", author: "Ajmal", availableCopies: 2 }
+    { title: "The Silent Patient", author: "Alex Michaelides", availableCopies: 3 },
+    { title: "Atomic Habits", author: "James Clear", availableCopies: 7 },
+    { title: "The Alchemist", author: "Paulo Coelho", availableCopies: 10 },
+    { title: "Educated", author: "Tara Westover", availableCopies: 2 }
 ];
 
 logBooksWithMoreThanFiveCopies(libraryBooks);

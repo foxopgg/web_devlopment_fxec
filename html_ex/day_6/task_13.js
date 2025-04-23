@@ -1,7 +1,7 @@
 const contactCard = {
-    name: "Ajmal Sins",
-    phone: "9999999999",
-    address: "12 vinayakar theru ,kuruku santhu, USA"
+    name: "John Doe",
+    phone: "1234567890",
+    address: "123 Main Street, Springfield, USA"
 };
 
 function formatContactDetails(contact) {

@@ -1,6 +1,6 @@
 const user = {
-    firstName: "Ajmal",
-    lastName: "Sins",
+    firstName: "john",
+    lastName: "joe",
     age: 18
 };
 

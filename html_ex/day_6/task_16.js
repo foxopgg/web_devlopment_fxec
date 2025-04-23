@@ -6,12 +6,10 @@ function increaseSalaries(employees) {
         };
     });
 }
-
-
 const employees = [
-    { name: "Ajmal", salary: 50000 },
-    { name: "Balaji", salary: 60000 },
-    { name: "Dilan", salary: 70000 }
+    { name: "Alice", salary: 50000 },
+    { name: "Bob", salary: 60000 },
+    { name: "Charlie", salary: 70000 }
 ];
 
 const updatedEmployees = increaseSalaries(employees);

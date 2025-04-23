@@ -5,10 +5,10 @@ function getPassingStudents(students) {
 }
 
 const students = [
-    { name: 'Ajmal', age: 18, score: 9 },
-    { name: 'balaji', age: 18, score: 9 },
-    { name: 'Dilan', age: 18, score: 9 },
-    { name: 'thariyathu', age: 18, score: 9 }
+    { name: 'Alice', age: 20, score: 85 },
+    { name: 'Bob', age: 22, score: 45 },
+    { name: 'Charlie', age: 19, score: 72 },
+    { name: 'Diana', age: 21, score: 60 }
 ];
 
 const passingStudents = getPassingStudents(students);

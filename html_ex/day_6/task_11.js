@@ -4,8 +4,8 @@ function getWelcomeMessage(user) {
 }
 
 const user = {
-    name: "Ajmal Sins",
-    email: "ajmal.sins@nammataan.com",
+    name: "John Doe",
+    email: "john.doe@example.com",
     property_age: 30
 };
 

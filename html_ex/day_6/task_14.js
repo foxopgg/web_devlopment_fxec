@@ -4,10 +4,10 @@ function getMovieDetails(movie) {
 }
 
 const movie = {
-    title: "50 Shades of Grey",
+    title: "Inception",
     genre: "Drama",
     year: 2010,
-    director: "Ajmal Sins"
+    director: "Christopher Nolan"
 };
 
 console.log(getMovieDetails(movie)); 

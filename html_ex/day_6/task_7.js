@@ -7,9 +7,9 @@ function displayBooksPublishedAfter2000(books) {
 }
 
 const books = [
-    { title: "Never have i ever", author: "Balaji", yearPublished: 1999 },
-    { title: "50 Shades of grey", author: "Dilan", yearPublished: 2005 },
-    { title: "Bared to you", author: "Ajmal", yearPublished: 2010 },
+    { title: "The Silent Patient", author: "Alex Michaelides", yearPublished: 1999 },
+    { title: "The Night Circus", author: "Erin Morgenstern", yearPublished: 2005 },
+    { title: "Circe", author: "Madeline Miller", yearPublished: 2010 },
 ];
 
 displayBooksPublishedAfter2000(books);

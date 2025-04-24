@@ -14,13 +14,19 @@
       <a href="add-student.html">Add Student</a>
       <a href="add-staff.html">Add Staff</a>
       <a href="view-staff.html">View Staff</a>
-      <a href="About.html">About</a>
+      <a href="about.html">About</a>
     </nav>
   </header>
 
   <main>
-    <section id="view-students" class="card">
-      <h2>Students List</h2>
+    <section class="card">
+      <h2>Students</h2>
+      <input
+        type="text"
+        id="studentSearch"
+        placeholder="Search by name or class..."
+        onkeyup="filterStudents()"
+      />
       <table id="studentsTable">
         <thead>
           <tr>
@@ -32,29 +38,28 @@
             <th>Subject 3</th>
             <th>Subject 4</th>
             <th>Subject 5</th>
-            <th>Department</th>
-            <th>Staff ID</th>
+            <th>Staff</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- Student data will load here -->
+        <tbody id="studentsBody">
+          <!-- Student rows will be inserted here -->
         </tbody>
       </table>
+      <p id="noResults" style="display:none; color: red;">No students found.</p>
     </section>
   </main>
 
   <script>
+    // Load student data
     document.addEventListener('DOMContentLoaded', async () => {
-      const tableBody = document.querySelector('#studentsTable tbody');
-    
+      const tableBody = document.querySelector('#studentsBody');
       try {
         const res = await fetch('/api/students');
         const students = await res.json();
-    
+
         students.forEach(student => {
           const row = document.createElement('tr');
           row.innerHTML = `
-            <td>${student.id}</td>
             <td>${student.name}</td>
             <td>${student.class}</td>
             <td>${student.dob}</td>
@@ -63,6 +68,7 @@
             <td>${student.subject3}</td>
             <td>${student.subject4}</td>
             <td>${student.subject5}</td>
+            <td>${student.staff}</td>
           `;
           tableBody.appendChild(row);
         });
@@ -70,6 +76,23 @@
         console.error('Error loading students:', err);
       }
     });
-    </script>
+
+    // Search functionality
+    function filterStudents() {
+      const input = document.getElementById('studentSearch').value.toLowerCase();
+      const rows = document.querySelectorAll('#studentsBody tr');
+      let found = false;
+
+      rows.forEach(row => {
+        const name = row.cells[0].textContent.toLowerCase();
+        const classVal = row.cells[1].textContent.toLowerCase();
+        const match = name.includes(input) || classVal.includes(input);
+        row.style.display = match ? '' : 'none';
+        if (match) found = true;
+      });
+
+      document.getElementById('noResults').style.display = found ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>

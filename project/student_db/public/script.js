@@ -1,6 +1,4 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle Student Form Submission (Add Student)
     const studentForm = document.getElementById('studentForm');
     if (studentForm) {
       studentForm.addEventListener('submit', async (event) => {
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await response.json();
           if (response.ok) {
             alert('Student added successfully');
-            studentForm.reset(); // Reset form after submission
+            studentForm.reset();
           } else {
             alert('Error adding student: ' + result.message);
           }
@@ -28,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  
-    // Handle Staff Form Submission (Add Staff)
     const staffForm = document.getElementById('staffForm');
     if (staffForm) {
       staffForm.addEventListener('submit', async (event) => {
@@ -48,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await response.json();
           if (response.ok) {
             alert('Staff added successfully');
-            staffForm.reset(); // Reset form after submission
+            staffForm.reset();
           } else {
             alert('Error adding staff: ' + result.message);
           }
@@ -57,8 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  
-    // Fetch and display students
+
     const studentsTable = document.getElementById('studentsTable');
     if (studentsTable) {
       fetch('/api/students')
@@ -82,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
   
-    // Fetch and display staff
     const staffTable = document.getElementById('staffTable');
     if (staffTable) {
       fetch('/api/staff')

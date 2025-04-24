@@ -31,14 +31,12 @@
           </tr>
         </thead>
         <tbody id="staffBody">
-          <!-- Staff rows will go here -->
         </tbody>
       </table>
     </section>
   </main>
 
   <script>
-    // Load staff data from server
     document.addEventListener('DOMContentLoaded', async () => {
       const tableBody = document.getElementById('staffBody');
 
@@ -69,8 +67,6 @@
         tableBody.appendChild(row);
       }
     });
-
-    // Filtering logic
     function filterStaff() {
       const input = document.getElementById('staffSearch').value.toLowerCase();
       const rows = document.querySelectorAll('#staffBody tr');

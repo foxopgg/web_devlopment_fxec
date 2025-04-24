@@ -67,6 +67,10 @@
             <td>${student.subject4}</td>
             <td>${student.subject5}</td>
             <td>${student.staff}</td>
+            <td>
+  <button onclick="removeStudent(${student.id}, '${student.name}')">Remove</button>
+</td>
+
           `;
           tableBody.appendChild(row);
         });

@@ -92,3 +92,52 @@ app.get('/api/staff', async (req, res) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+app.get('/api/admin/removal-logs', async (req, res) => {
+  try {
+    const [logs] = await pool.query('SELECT * FROM removal_logs ORDER BY removed_at DESC');
+    res.json(logs);
+  } catch (err) {
+    console.error('Error fetching logs:', err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+app.delete('/api/students/:id', async (req, res) => {
+  const studentId = req.params.id;
+  const { reason } = req.body;
+
+  if (!reason) return res.status(400).send("Removal reason required.");
+
+  try {
+    // 1. Get the student data before deleting
+    const [student] = await db.query("SELECT * FROM students WHERE id = ?", [studentId]);
+    if (!student) return res.status(404).send("Student not found");
+
+    // 2. Delete the student
+    await db.query("DELETE FROM students WHERE id = ?", [studentId]);
+
+    // 3. Log the removal
+    await db.query(`
+      INSERT INTO removed_students (id, name, class, dob, subject1, subject2, subject3, subject4, subject5, staff, removal_reason, removed_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+    `, [
+      student.id,
+      student.name,
+      student.class,
+      student.dob,
+      student.subject1,
+      student.subject2,
+      student.subject3,
+      student.subject4,
+      student.subject5,
+      student.staff,
+      reason
+    ]);
+
+    res.status(200).send("Student removed and logged.");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error.");
+  }
+});

@@ -151,3 +151,10 @@ table th {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+#studentsTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

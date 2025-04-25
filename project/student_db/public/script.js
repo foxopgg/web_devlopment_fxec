@@ -93,4 +93,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
   });
+  async function removeStudent(id, name) {
+    if (!confirm(`Are you sure you want to remove ${name}?`)) return;
+  
+    try {
+      const res = await fetch(`/api/students/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (res.ok) {
+        // Remove the row directly without reloading
+        const row = document.querySelector(`button[onclick="removeStudent(${id}, '${name}')"]`).closest('tr');
+        if (row) row.remove();
+  
+        // Optionally re-check if table is empty
+        filterStudents();
+      } else {
+        alert(`Failed to remove ${name}.`);
+      }
+    } catch (err) {
+      console.error('Error removing student:', err);
+      alert('Something went wrong.');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', async () => {
+    const tableBody = document.querySelector('#studentsBody');
+    const staffResponse = await fetch('/api/staff');
+    const staffData = await staffResponse.json();
+  
+    try {
+      const res = await fetch('/api/students');
+      const students = await res.json();
+  
+      students.forEach(student => {
+        const staffMember = staffData.find(staff => staff.staff_id === student.staff_id);
+        const staffName = staffMember ? staffMember.name : 'Not Assigned';
+      
+        // Format the DOB
+        const formattedDob = new Date(student.dob).toLocaleDateString('en-GB'); // Format to DD-MM-YYYY
+      
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${student.name}</td>
+          <td>${student.class}</td>
+          <td>${formattedDob}</td> <!-- Display formatted DOB -->
+          <td>${student.subject1}</td>
+          <td>${student.subject2}</td>
+          <td>${student.subject3}</td>
+          <td>${student.subject4}</td>
+          <td>${student.subject5}</td>
+          <td>${staffName}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+      
+    } catch (err) {
+      console.error('Error loading students:', err);
+      const row = document.createElement('tr');
+      row.innerHTML = `<td colspan="9">Error loading data</td>`;
+      tableBody.appendChild(row);
+    }
+  });
+  
+
+
+  students.forEach(student => {
+    const staffMember = staffData.find(staff => staff.staff_id === student.staff_id);
+    const staffName = staffMember ? staffMember.name : 'Not Assigned';
+  
+    // Format the DOB
+    const formattedDob = new Date(student.dob).toLocaleDateString('en-GB'); // Format to DD-MM-YYYY
+  
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${student.name}</td>
+      <td>${student.class}</td>
+      <td>${formattedDob}</td> <!-- Display formatted DOB -->
+      <td>${student.subject1}</td>
+      <td>${student.subject2}</td>
+      <td>${student.subject3}</td>
+      <td>${student.subject4}</td>
+      <td>${student.subject5}</td>
+      <td>${staffName}</td>
+    `;
+    tableBody.appendChild(row);
+  });
   

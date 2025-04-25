@@ -19,6 +19,7 @@
   </header>
 
   <main>
+    <label for="studentSearch" class="visually-hidden">Search Students</label
     <section class="card">
       <h2>Students</h2>
       <input
@@ -66,7 +67,7 @@
             <td>${student.subject3}</td>
             <td>${student.subject4}</td>
             <td>${student.subject5}</td>
-            <td>${student.staff}</td>
+            <td>${student.stuff_id}</td>
             <td>
   <button onclick="removeStudent(${student.id}, '${student.name}')">Remove</button>
 </td>
@@ -93,6 +94,35 @@
 
       document.getElementById('noResults').style.display = found ? 'none' : 'block';
     }
+    
   </script>
+  <script>
+    async function removeStudent(id, name) {
+      const reason = prompt(`Why are you removing ${name}?`);
+      if (!reason) return;
+  
+      try {
+        const res = await fetch(`/api/students/remove/${id}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ reason })
+        });
+  
+        if (res.ok) {
+          alert(`${name} removed successfully.`);
+          location.reload(); // Or remove the row without reload
+        } else {
+          const errorText = await res.text();
+          alert(`Failed to remove ${name}. Server says: ${errorText}`);
+        }
+      } catch (err) {
+        console.error('Error removing student:', err);
+        alert('Something went wrong.');
+      }
+    }
+  </script>
+  
 </body>
 </html>

@@ -186,7 +186,7 @@ app.get('/api/students', async (req, res) => {
       FROM students
       LEFT JOIN staff ON students.staff_id = staff.id
     `);
-    res.json(rows);
+    res.json(rows);\
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Failed to fetch students' });
